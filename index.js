@@ -16,9 +16,9 @@ const client = mqtt.connect({
   host: process.env.MQTT_HOST,
   protocol: "mqtts",
   port: 8883,
-  key: fs.readFileSync("./certs/private.pem.key"),
-  cert: fs.readFileSync("./certs/certificate.pem.crt"),
-  ca: fs.readFileSync("./certs/AmazonRootCA1.pem"),
+  key: fs.readFileSync("./certs/device01.private.key"),
+  cert: fs.readFileSync("./certs/device01.cert.pem"),
+  ca: fs.readFileSync("./certs/root-CA.crt"),
 });
 
 client.on("connect", () => {
